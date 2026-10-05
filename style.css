@@ -1,51 +1,31 @@
-/* =========================================================
-   PERSONAL PROFILE: Tharunya R Naik
-   Stylesheet (HTML5 + CSS3 only, no frameworks)
-   ========================================================= */
-
-
-/* =========================================================
-   1. COLOUR PALETTE & DESIGN TOKENS
-   All colours and sizes are stored as CSS variables so the
-   whole theme can be changed from one place.
-   ========================================================= */
+/* ===== Colour palette and design settings ===== */
 :root {
-    /* Backgrounds and text */
-    --color-bg: #f8fafb;           /* very light cool grey page background */
-    --color-bg-alt: #eef4f5;       /* tinted band for alternate sections */
-    --color-surface: #ffffff;      /* cards */
-    --color-text: #14232b;         /* main text (deep navy) */
-    --color-muted: #4f5f68;        /* secondary text */
-    --color-border: #dfe7ea;       /* subtle borders */
+    --color-bg: #fbf8f6;
+    --color-bg-alt: #f6efeb;
+    --color-surface: #ffffff;
+    --color-text: #2e2529;
+    --color-muted: #6b5f65;
+    --color-border: #ece3de;
 
-    /* Brand colours */
-    --color-primary: #0e7c7b;      /* teal: main brand colour */
-    --color-primary-dark: #0a5d5c;
-    --color-primary-soft: #dff1f0;
-    --color-accent: #e08a2e;       /* warm amber: highlights */
-    --color-navy: #0f2a37;         /* contact section and footer */
-
-    /* Soft tints for icon tiles (a few colours, used sparingly) */
-    --tint-teal-bg: #dff1f0;   --tint-teal-fg: #0e7c7b;
-    --tint-amber-bg: #fcefdf;  --tint-amber-fg: #b5661a;
-    --tint-indigo-bg: #e6e9fb; --tint-indigo-fg: #3f4fb8;
-    --tint-rose-bg: #fbe5ec;   --tint-rose-fg: #b83d64;
+    --color-primary: #9a5b6f;
+    --color-primary-dark: #7a4357;
+    --color-primary-soft: #f6e9ec;
+    --color-gold: #c8a27c;
+    --color-dark: #2f2630;
 
     --font-heading: "Fraunces", Georgia, "Times New Roman", serif;
     --font-body: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
     --radius: 16px;
-    --radius-pill: 999px;          /* pill shape for tags and buttons */
-    --shadow: 0 1px 2px rgba(15, 42, 55, 0.04), 0 6px 20px rgba(15, 42, 55, 0.06);
-    --shadow-hover: 0 4px 8px rgba(15, 42, 55, 0.06), 0 18px 36px rgba(15, 42, 55, 0.12);
+    --radius-pill: 999px;
+    --shadow: 0 1px 2px rgba(47, 38, 48, 0.04), 0 6px 20px rgba(47, 38, 48, 0.05);
+    --shadow-hover: 0 4px 10px rgba(47, 38, 48, 0.06), 0 16px 32px rgba(47, 38, 48, 0.09);
     --max-width: 1140px;
     --header-height: 72px;
 }
 
 
-/* =========================================================
-   2. BASE / RESET STYLES
-   ========================================================= */
+/* ===== Base styles ===== */
 *,
 *::before,
 *::after {
@@ -53,8 +33,9 @@
 }
 
 html {
-    scroll-behavior: smooth;                    /* smooth scrolling for nav links */
-    scroll-padding-top: var(--header-height);   /* stops the sticky header covering headings */
+    scroll-behavior: smooth;
+    /* Keeps section headings visible below the sticky header */
+    scroll-padding-top: var(--header-height);
 }
 
 body {
@@ -64,7 +45,7 @@ body {
     font-family: var(--font-body);
     font-size: 1.0625rem;
     line-height: 1.7;
-    overflow-x: hidden;                         /* prevents sideways scrolling */
+    overflow-x: hidden;
 }
 
 img {
@@ -88,14 +69,12 @@ a {
     color: var(--color-primary);
 }
 
-/* Visible focus outline for keyboard users */
 a:focus-visible {
-    outline: 3px solid var(--color-accent);
+    outline: 3px solid var(--color-gold);
     outline-offset: 3px;
     border-radius: 6px;
 }
 
-/* Centres content and limits its width */
 .container {
     width: 100%;
     max-width: var(--max-width);
@@ -103,19 +82,17 @@ a:focus-visible {
     padding: 0 1.5rem;
 }
 
-/* Shared style for every inline SVG icon */
 .icon {
     width: 24px;
     height: 24px;
     fill: none;
-    stroke: currentColor;                       /* icon takes the text colour of its parent */
+    stroke: currentColor;
     stroke-width: 1.8;
     stroke-linecap: round;
     stroke-linejoin: round;
     flex-shrink: 0;
 }
 
-/* Skip link is hidden until it receives keyboard focus */
 .skip-link {
     position: absolute;
     left: 1rem;
@@ -132,14 +109,12 @@ a:focus-visible {
 }
 
 
-/* =========================================================
-   3. HEADER & NAVIGATION BAR
-   ========================================================= */
+/* ===== Header and navigation ===== */
 .site-header {
-    position: sticky;                           /* stays at the top while scrolling */
+    position: sticky;
     top: 0;
     z-index: 50;
-    background-color: rgba(248, 250, 251, 0.9);
+    background-color: rgba(251, 248, 246, 0.9);
     border-bottom: 1px solid var(--color-border);
     backdrop-filter: blur(10px);
 }
@@ -161,7 +136,7 @@ a:focus-visible {
 }
 
 .brand span {
-    color: var(--color-accent);
+    color: var(--color-primary);
 }
 
 .nav-links {
@@ -190,22 +165,19 @@ a:focus-visible {
     color: var(--color-primary-dark);
 }
 
-/* "Contact" link is styled as a small button */
 .nav-links .nav-cta {
-    background-color: var(--color-navy);
+    background-color: var(--color-primary);
     color: #fff;
     margin-left: 0.4rem;
 }
 
 .nav-links .nav-cta:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-dark);
     color: #fff;
 }
 
 
-/* =========================================================
-   4. BUTTONS
-   ========================================================= */
+/* ===== Buttons ===== */
 .btn {
     display: inline-block;
     padding: 0.85rem 1.7rem;
@@ -213,8 +185,8 @@ a:focus-visible {
     font-weight: 600;
     font-size: 0.98rem;
     text-decoration: none;
-    border: 2px solid var(--color-primary);
-    transition: background-color 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+    border: 1.5px solid var(--color-primary);
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
 
 .btn:hover {
@@ -224,17 +196,15 @@ a:focus-visible {
 .btn-primary {
     background-color: var(--color-primary);
     color: #fff;
-    box-shadow: 0 8px 20px rgba(14, 124, 123, 0.25);
 }
 
 .btn-primary:hover {
     background-color: var(--color-primary-dark);
     border-color: var(--color-primary-dark);
-    box-shadow: 0 12px 24px rgba(14, 124, 123, 0.3);
 }
 
 .btn-outline {
-    background-color: var(--color-surface);
+    background-color: transparent;
     color: var(--color-primary-dark);
 }
 
@@ -243,26 +213,22 @@ a:focus-visible {
 }
 
 
-/* =========================================================
-   5. HERO / HOME SECTION
-   ========================================================= */
+/* ===== Hero section ===== */
 .hero {
     padding: 4.5rem 0 5.5rem;
-    /* Two soft colour glows layered over the page background */
+    /* A very soft blush glow behind the photo */
     background:
-        radial-gradient(circle at 85% 15%, rgba(14, 124, 123, 0.14), transparent 45%),
-        radial-gradient(circle at 5% 95%, rgba(224, 138, 46, 0.12), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(154, 91, 111, 0.08), transparent 45%),
         var(--color-bg);
 }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.3fr 1fr;           /* text column + photo column */
+    grid-template-columns: 1.3fr 1fr;
     align-items: center;
     gap: 4rem;
 }
 
-/* Small rounded label above the name */
 .hero-chip {
     display: inline-flex;
     align-items: center;
@@ -273,36 +239,32 @@ a:focus-visible {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-pill);
     font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--color-primary-dark);
-    box-shadow: var(--shadow);
+    font-weight: 500;
+    color: var(--color-muted);
 }
 
 .dot {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-    background-color: var(--color-accent);
+    background-color: var(--color-gold);
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 5.6vw, 4rem);      /* scales smoothly with screen width */
+    /* clamp() makes the heading grow and shrink with the screen width */
+    font-size: clamp(2.5rem, 5.6vw, 4rem);
     letter-spacing: -0.02em;
     margin-bottom: 1rem;
 }
 
-/* Gradient-coloured name */
 .highlight {
     display: block;
-    background: linear-gradient(90deg, var(--color-primary) 0%, #1a5f8a 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--color-primary);
 }
 
 .hero-role {
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--color-text);
     margin-bottom: 1rem;
 }
@@ -319,7 +281,6 @@ a:focus-visible {
     gap: 0.9rem;
 }
 
-/* Row of three highlight numbers */
 .hero-stats {
     list-style: none;
     display: flex;
@@ -348,24 +309,23 @@ a:focus-visible {
     color: var(--color-muted);
 }
 
-/* Photo with a gradient border and a floating location tag */
 .hero-photo {
     position: relative;
-    max-width: 390px;
+    max-width: 380px;
     width: 100%;
     justify-self: center;
 }
 
 .photo-frame {
-    padding: 8px;
-    border-radius: 28px;
-    background: linear-gradient(140deg, var(--color-primary), #5fb3b0 45%, var(--color-accent));
+    padding: 6px;
+    border-radius: 26px;
+    background: linear-gradient(150deg, #e9cfd6, var(--color-surface) 50%, #ead9c6);
     box-shadow: var(--shadow-hover);
 }
 
 .photo-frame img {
     width: 100%;
-    border-radius: 22px;
+    border-radius: 21px;
     aspect-ratio: 4 / 5;
     object-fit: cover;
     object-position: center 25%;
@@ -381,22 +341,21 @@ a:focus-visible {
     margin: 0;
     padding: 0.6rem 1rem;
     background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
     border-radius: 12px;
-    box-shadow: var(--shadow-hover);
+    box-shadow: var(--shadow);
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .photo-tag .icon {
     width: 18px;
     height: 18px;
-    color: var(--color-accent);
+    color: var(--color-primary);
 }
 
 
-/* =========================================================
-   6. SHARED SECTION STYLES
-   ========================================================= */
+/* ===== Shared section styles ===== */
 .section {
     padding: 5.5rem 0;
 }
@@ -405,25 +364,23 @@ a:focus-visible {
     background-color: var(--color-bg-alt);
 }
 
-/* Small label above each heading, with a short coloured line */
 .section-label {
     display: flex;
     align-items: center;
     gap: 0.65rem;
     color: var(--color-primary);
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     margin-bottom: 0.6rem;
 }
 
 .section-label::before {
     content: "";
-    width: 28px;
-    height: 3px;
-    border-radius: 3px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    width: 24px;
+    height: 1.5px;
+    background-color: var(--color-gold);
 }
 
 .section-title {
@@ -432,7 +389,6 @@ a:focus-visible {
     margin-bottom: 2.75rem;
 }
 
-/* Reusable card style */
 .card {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -451,39 +407,33 @@ a:focus-visible {
     margin-bottom: 0;
 }
 
-/* Shared hover effect for interactive-looking cards */
 .project-card:hover,
 .skill-card:hover,
 .interest-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
-    border-color: #bfdcdb;
+    border-color: #e3cdd3;
 }
 
-/* Responsive grid of cards: columns are added automatically as space allows */
+/* auto-fit adds or removes columns automatically depending on screen width */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
-/* Rounded square that holds an icon */
 .icon-tile {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     border-radius: 14px;
     margin-bottom: 1.1rem;
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary);
 }
 
-.tile-teal   { background-color: var(--tint-teal-bg);   color: var(--tint-teal-fg); }
-.tile-amber  { background-color: var(--tint-amber-bg);  color: var(--tint-amber-fg); }
-.tile-indigo { background-color: var(--tint-indigo-bg); color: var(--tint-indigo-fg); }
-.tile-rose   { background-color: var(--tint-rose-bg);   color: var(--tint-rose-fg); }
-
-/* Small pill-shaped labels used for technologies and skills */
 .tags {
     list-style: none;
     display: flex;
@@ -494,7 +444,7 @@ a:focus-visible {
 }
 
 .tags li {
-    background-color: var(--color-bg-alt);
+    background-color: var(--color-bg);
     border: 1px solid var(--color-border);
     color: var(--color-text);
     font-size: 0.84rem;
@@ -503,16 +453,8 @@ a:focus-visible {
     border-radius: var(--radius-pill);
 }
 
-.tags-soft li {
-    background-color: var(--tint-rose-bg);
-    border-color: #f3cfdb;
-    color: #8e2d4c;
-}
 
-
-/* =========================================================
-   7. ABOUT SECTION
-   ========================================================= */
+/* ===== About section ===== */
 .about-grid {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
@@ -530,9 +472,8 @@ a:focus-visible {
     color: var(--color-text);
 }
 
-/* Quick facts card with a coloured top edge */
 .facts-card {
-    border-top: 4px solid var(--color-primary);
+    border-top: 3px solid var(--color-primary);
 }
 
 .facts {
@@ -551,7 +492,7 @@ a:focus-visible {
 
 .facts dt {
     font-size: 0.76rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-primary);
@@ -563,9 +504,7 @@ a:focus-visible {
 }
 
 
-/* =========================================================
-   8. EDUCATION TIMELINE
-   ========================================================= */
+/* ===== Education timeline ===== */
 .timeline {
     display: grid;
     gap: 1.5rem;
@@ -573,26 +512,24 @@ a:focus-visible {
     padding-left: 4.5rem;
 }
 
-/* Vertical line connecting the timeline icons */
+/* The vertical line that joins the timeline icons */
 .timeline::before {
     content: "";
     position: absolute;
     left: 23px;
     top: 1.5rem;
     bottom: 1.5rem;
-    width: 2px;
-    background: linear-gradient(var(--color-primary), var(--color-accent));
-    opacity: 0.4;
+    width: 1.5px;
+    background-color: #e3cdd3;
 }
 
 .timeline-item {
     position: relative;
 }
 
-/* Round icon badge sitting on the timeline line */
 .timeline-icon {
     position: absolute;
-    left: calc(-4.5rem);
+    left: -4.5rem;
     top: 1.5rem;
     width: 48px;
     height: 48px;
@@ -601,9 +538,8 @@ a:focus-visible {
     justify-content: center;
     border-radius: 50%;
     background-color: var(--color-surface);
-    border: 2px solid var(--color-primary);
+    border: 1.5px solid #e3cdd3;
     color: var(--color-primary);
-    box-shadow: var(--shadow);
 }
 
 .timeline-icon .icon {
@@ -624,8 +560,8 @@ a:focus-visible {
 }
 
 .badge {
-    background-color: var(--tint-amber-bg);
-    color: #8a4a10;
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary-dark);
     font-size: 0.84rem;
     font-weight: 600;
     padding: 0.25rem 0.85rem;
@@ -633,24 +569,18 @@ a:focus-visible {
     white-space: nowrap;
 }
 
-.timeline-sub {
-    font-weight: 600;
-    color: var(--color-primary-dark);
-    margin-bottom: 0.5rem;
-}
-
 .timeline-item p {
     color: var(--color-muted);
 }
 
 .timeline-item .timeline-sub {
+    font-weight: 600;
     color: var(--color-primary-dark);
+    margin-bottom: 0.5rem;
 }
 
 
-/* =========================================================
-   9. PROJECTS & SKILLS CARDS
-   ========================================================= */
+/* ===== Projects and skills ===== */
 .project-card {
     display: flex;
     flex-direction: column;
@@ -662,18 +592,18 @@ a:focus-visible {
     align-items: flex-start;
 }
 
-/* Large faded number in the corner of each project card */
 .project-number {
     font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 600;
     line-height: 1;
-    color: var(--color-border);
+    color: #ecdcd6;
 }
 
 .project-card p {
     color: var(--color-muted);
-    flex-grow: 1;                               /* keeps tags aligned at the bottom */
+    /* Pushes the tags to the bottom so all cards line up */
+    flex-grow: 1;
 }
 
 .skills-grid {
@@ -686,9 +616,7 @@ a:focus-visible {
 }
 
 
-/* =========================================================
-   10. INTERESTS / HOBBIES
-   ========================================================= */
+/* ===== Interests ===== */
 .interest-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -706,18 +634,14 @@ a:focus-visible {
 }
 
 
-/* =========================================================
-   11. CONTACT SECTION
-   ========================================================= */
+/* ===== Contact section ===== */
 .section-dark {
-    background:
-        radial-gradient(circle at 90% 10%, rgba(14, 124, 123, 0.35), transparent 50%),
-        var(--color-navy);
-    color: #f1f5f6;
+    background-color: var(--color-dark);
+    color: #f6f0ee;
 }
 
 .section-dark .section-label {
-    color: #7fd1cf;
+    color: #e2b9c4;
 }
 
 .section-dark .section-title {
@@ -725,7 +649,7 @@ a:focus-visible {
 }
 
 .contact-intro {
-    color: #c4d1d6;
+    color: #cbbfc4;
     max-width: 38rem;
     margin-bottom: 2.5rem;
 }
@@ -741,18 +665,18 @@ a:focus-visible {
     flex-direction: column;
     gap: 0.3rem;
     padding: 1.6rem;
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius);
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #f1f5f6;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #f6f0ee;
     text-decoration: none;
     transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
 }
 
 a.contact-card:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: #7fd1cf;
-    transform: translateY(-4px);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: #e2b9c4;
+    transform: translateY(-3px);
 }
 
 .contact-icon {
@@ -763,30 +687,28 @@ a.contact-card:hover {
     height: 44px;
     margin-bottom: 0.6rem;
     border-radius: 12px;
-    background-color: rgba(127, 209, 207, 0.15);
-    color: #7fd1cf;
+    background-color: rgba(226, 185, 196, 0.14);
+    color: #e2b9c4;
 }
 
 .contact-type {
     font-size: 0.76rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #f2b26b;
+    color: var(--color-gold);
 }
 
 .contact-value {
     font-weight: 500;
-    overflow-wrap: anywhere;                    /* long email addresses wrap on small screens */
+    overflow-wrap: anywhere;
 }
 
 
-/* =========================================================
-   12. FOOTER
-   ========================================================= */
+/* ===== Footer ===== */
 .site-footer {
-    background-color: #0a1f29;
-    color: #a9b8bf;
+    background-color: #261e27;
+    color: #b6a9af;
     padding: 1.5rem 0;
     font-size: 0.92rem;
 }
@@ -804,7 +726,7 @@ a.contact-card:hover {
 }
 
 .site-footer a {
-    color: #7fd1cf;
+    color: #e2b9c4;
     text-decoration: none;
     font-weight: 500;
 }
@@ -814,11 +736,7 @@ a.contact-card:hover {
 }
 
 
-/* =========================================================
-   13. RESPONSIVE DESIGN (MEDIA QUERIES)
-   ========================================================= */
-
-/* Tablets and small laptops */
+/* ===== Responsive: tablets ===== */
 @media (max-width: 960px) {
     .nav-bar {
         flex-direction: column;
@@ -840,13 +758,14 @@ a.contact-card:hover {
     }
 
     .hero-grid {
-        grid-template-columns: 1fr;             /* stack photo above text */
+        grid-template-columns: 1fr;
         gap: 3rem;
         text-align: center;
     }
 
+    /* Show the photo above the text on smaller screens */
     .hero-photo {
-        order: -1;                              /* move the photo to the top */
+        order: -1;
         max-width: 300px;
     }
 
@@ -870,7 +789,8 @@ a.contact-card:hover {
     }
 }
 
-/* Mobile phones */
+
+/* ===== Responsive: mobile phones ===== */
 @media (max-width: 600px) {
     body {
         font-size: 1rem;
@@ -931,7 +851,6 @@ a.contact-card:hover {
         grid-template-columns: 1fr;
     }
 
-    /* Timeline: smaller icons on phones */
     .timeline {
         padding-left: 3.25rem;
     }
@@ -957,7 +876,8 @@ a.contact-card:hover {
     }
 }
 
-/* Respect users who prefer reduced motion */
+
+/* Turns off animations for people who prefer less motion */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;

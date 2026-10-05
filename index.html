@@ -6,27 +6,18 @@
     <meta name="description" content="Personal profile of Tharunya R Naik, B.Tech Information Technology student at Manipal Institute of Technology.">
     <title>Tharunya R Naik | Personal Profile</title>
 
-    <!-- Google Fonts: Fraunces for headings, Inter for body text -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Main stylesheet (the ?v=3 version number makes browsers download the latest copy after an update) -->
-    <link rel="stylesheet" href="style.css?v=3">
+    <!-- Stylesheet: change ?v= after editing the CSS so browsers load the new version -->
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
-
-    <!-- Skip link: lets keyboard users jump straight to the content -->
     <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!--
-        NOTE ON ICONS:
-        The small symbols on this page are inline SVG (Scalable Vector Graphics).
-        Each icon is a few lines drawn inside a 24 x 24 box. They use the class "icon",
-        and CSS sets their colour, so no image files or icon libraries are needed.
-    -->
-
-    <!-- ================= HEADER & NAVIGATION ================= -->
+    <!-- ===== Header & Navigation ===== -->
     <header class="site-header">
         <div class="container nav-bar">
             <a class="brand" href="#home">Tharunya<span>.</span></a>
@@ -46,7 +37,7 @@
 
     <main id="main">
 
-        <!-- ================= HERO / HOME SECTION ================= -->
+        <!-- ===== Hero / Home section ===== -->
         <section id="home" class="hero">
             <div class="container hero-grid">
                 <div class="hero-text">
@@ -65,8 +56,6 @@
                         <a class="btn btn-primary" href="#contact">Get in Touch</a>
                         <a class="btn btn-outline" href="#projects">View Projects</a>
                     </div>
-
-                    <!-- Key highlights taken from the resume -->
                     <ul class="hero-stats">
                         <li><strong>95%</strong><span>Pre-University score</span></li>
                         <li><strong>3</strong><span>Academic projects</span></li>
@@ -87,7 +76,7 @@
             </div>
         </section>
 
-        <!-- ================= ABOUT ME SECTION ================= -->
+        <!-- ===== About Me section ===== -->
         <section id="about" class="section">
             <div class="container">
                 <p class="section-label">About Me</p>
@@ -115,8 +104,6 @@
                             and I value teamwork, adaptability and good time management in everything I do.
                         </p>
                     </div>
-
-                    <!-- Quick facts card -->
                     <aside class="card facts-card" aria-label="Quick facts">
                         <h3>Quick Facts</h3>
                         <dl class="facts">
@@ -142,14 +129,13 @@
             </div>
         </section>
 
-        <!-- ================= EDUCATION SECTION ================= -->
+        <!-- ===== Education section ===== -->
         <section id="education" class="section section-alt">
             <div class="container">
                 <p class="section-label">Education</p>
                 <h2 class="section-title">Academic background</h2>
 
                 <div class="timeline">
-                    <!-- Education item 1: University -->
                     <article class="card timeline-item">
                         <span class="timeline-icon" aria-hidden="true">
                             <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
@@ -161,8 +147,6 @@
                         <p class="timeline-sub">B.Tech in Information Technology (IT)</p>
                         <p>Currently in the third year of the undergraduate programme.</p>
                     </article>
-
-                    <!-- Education item 2: Pre-University -->
                     <article class="card timeline-item">
                         <span class="timeline-icon" aria-hidden="true">
                             <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
@@ -174,8 +158,6 @@
                         <p class="timeline-sub">PCMC: Physics, Chemistry, Mathematics, Computer Science</p>
                         <p>Completed pre-university education with a score of <strong>95%</strong>.</p>
                     </article>
-
-                    <!-- Education item 3: School -->
                     <article class="card timeline-item">
                         <span class="timeline-icon" aria-hidden="true">
                             <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M10 21v-5h4v5"/></svg>
@@ -191,17 +173,16 @@
             </div>
         </section>
 
-        <!-- ================= PROJECTS SECTION (Professional Information) ================= -->
+        <!-- ===== Projects section (Professional Information) ===== -->
         <section id="projects" class="section">
             <div class="container">
                 <p class="section-label">Projects</p>
                 <h2 class="section-title">What I have built</h2>
 
                 <div class="card-grid">
-                    <!-- Project 1 -->
                     <article class="card project-card">
                         <div class="project-top">
-                            <span class="icon-tile tile-teal" aria-hidden="true">
+                            <span class="icon-tile" aria-hidden="true">
                                 <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
                             </span>
                             <span class="project-number">01</span>
@@ -219,11 +200,9 @@
                             <li>JavaScript</li>
                         </ul>
                     </article>
-
-                    <!-- Project 2 -->
                     <article class="card project-card">
                         <div class="project-top">
-                            <span class="icon-tile tile-amber" aria-hidden="true">
+                            <span class="icon-tile" aria-hidden="true">
                                 <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3Z"/><path d="M9 3v15"/><path d="M15 6v15"/></svg>
                             </span>
                             <span class="project-number">02</span>
@@ -243,11 +222,9 @@
                             <li>XAMPP</li>
                         </ul>
                     </article>
-
-                    <!-- Project 3 -->
                     <article class="card project-card">
                         <div class="project-top">
-                            <span class="icon-tile tile-indigo" aria-hidden="true">
+                            <span class="icon-tile" aria-hidden="true">
                                 <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg>
                             </span>
                             <span class="project-number">03</span>
@@ -269,7 +246,7 @@
             </div>
         </section>
 
-        <!-- ================= SKILLS SECTION ================= -->
+        <!-- ===== Skills section ===== -->
         <section id="skills" class="section section-alt">
             <div class="container">
                 <p class="section-label">Skills</p>
@@ -277,7 +254,7 @@
 
                 <div class="card-grid skills-grid">
                     <div class="card skill-card">
-                        <span class="icon-tile tile-teal" aria-hidden="true">
+                        <span class="icon-tile" aria-hidden="true">
                             <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
                         </span>
                         <h3>Programming Languages</h3>
@@ -290,7 +267,7 @@
                     </div>
 
                     <div class="card skill-card">
-                        <span class="icon-tile tile-indigo" aria-hidden="true">
+                        <span class="icon-tile" aria-hidden="true">
                             <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg>
                         </span>
                         <h3>Web &amp; Frameworks</h3>
@@ -303,7 +280,7 @@
                     </div>
 
                     <div class="card skill-card">
-                        <span class="icon-tile tile-amber" aria-hidden="true">
+                        <span class="icon-tile" aria-hidden="true">
                             <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg>
                         </span>
                         <h3>Tools</h3>
@@ -316,11 +293,11 @@
                     </div>
 
                     <div class="card skill-card">
-                        <span class="icon-tile tile-rose" aria-hidden="true">
+                        <span class="icon-tile" aria-hidden="true">
                             <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>
                         </span>
                         <h3>Personal Strengths</h3>
-                        <ul class="tags tags-soft">
+                        <ul class="tags">
                             <li>Time Management</li>
                             <li>Creativity</li>
                             <li>Teamwork</li>
@@ -331,7 +308,7 @@
             </div>
         </section>
 
-        <!-- ================= INTERESTS / HOBBIES SECTION ================= -->
+        <!-- ===== Interests / Hobbies section ===== -->
         <section id="interests" class="section">
             <div class="container">
                 <p class="section-label">Interests &amp; Hobbies</p>
@@ -339,42 +316,42 @@
 
                 <div class="interest-grid">
                     <div class="card interest-card">
-                        <span class="icon-tile tile-teal" aria-hidden="true">
+                        <span class="icon-tile" aria-hidden="true">
                             <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
                         </span>
                         <h3>Drawing</h3>
                         <p>Sketching ideas, people and places with pencil and pen.</p>
                     </div>
                     <div class="card interest-card">
-                        <span class="icon-tile tile-amber" aria-hidden="true">
+                        <span class="icon-tile" aria-hidden="true">
                             <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1"/><circle cx="17.5" cy="10.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><circle cx="6.5" cy="12.5" r="1"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.55-2.5 5.55-5.55C21.97 6.01 17.46 2 12 2Z"/></svg>
                         </span>
                         <h3>Painting</h3>
                         <p>Experimenting with colour, texture and composition on canvas.</p>
                     </div>
                     <div class="card interest-card">
-                        <span class="icon-tile tile-rose" aria-hidden="true">
+                        <span class="icon-tile" aria-hidden="true">
                             <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                         </span>
                         <h3>Dancing</h3>
                         <p>Expressing rhythm and emotion through movement.</p>
                     </div>
                     <div class="card interest-card">
-                        <span class="icon-tile tile-indigo" aria-hidden="true">
+                        <span class="icon-tile" aria-hidden="true">
                             <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="9" r="6"/><path d="M11 9h8"/><path d="M15 5v8"/><path d="m10.8 13.2-7.3 7.3"/></svg>
                         </span>
                         <h3>Badminton</h3>
                         <p>A fast-paced game I enjoy for fitness and friendly competition.</p>
                     </div>
                     <div class="card interest-card">
-                        <span class="icon-tile tile-teal" aria-hidden="true">
+                        <span class="icon-tile" aria-hidden="true">
                             <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
                         </span>
                         <h3>Exploring New Tech</h3>
                         <p>Trying out new tools, frameworks and ideas in the tech world.</p>
                     </div>
                     <div class="card interest-card">
-                        <span class="icon-tile tile-amber" aria-hidden="true">
+                        <span class="icon-tile" aria-hidden="true">
                             <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
                         </span>
                         <h3>UI &amp; Visual Design</h3>
@@ -384,7 +361,7 @@
             </div>
         </section>
 
-        <!-- ================= CONTACT SECTION ================= -->
+        <!-- ===== Contact section ===== -->
         <section id="contact" class="section section-dark">
             <div class="container">
                 <p class="section-label">Contact</p>
@@ -422,7 +399,7 @@
 
     </main>
 
-    <!-- ================= FOOTER ================= -->
+    <!-- ===== Footer ===== -->
     <footer class="site-footer">
         <div class="container footer-inner">
             <p>&copy; 2026 Tharunya R Naik. Built with HTML &amp; CSS.</p>
