@@ -10,26 +10,35 @@
    whole theme can be changed from one place.
    ========================================================= */
 :root {
-    --color-bg: #faf8f4;          /* warm off-white page background */
-    --color-bg-alt: #f1eee7;      /* slightly darker band for alternate sections */
-    --color-surface: #ffffff;     /* cards */
-    --color-text: #1d2521;        /* main text (near-black green) */
-    --color-muted: #55605a;       /* secondary text */
-    --color-border: #e2ddd2;      /* subtle borders */
-    --color-primary: #2f5d50;     /* deep green accent, matches the photo */
-    --color-primary-dark: #22463c;
-    --color-primary-soft: #e3ece7;
-    --color-accent: #b5763a;      /* warm bronze highlight */
-    --color-dark: #17221e;        /* contact section background */
+    /* Backgrounds and text */
+    --color-bg: #f8fafb;           /* very light cool grey page background */
+    --color-bg-alt: #eef4f5;       /* tinted band for alternate sections */
+    --color-surface: #ffffff;      /* cards */
+    --color-text: #14232b;         /* main text (deep navy) */
+    --color-muted: #4f5f68;        /* secondary text */
+    --color-border: #dfe7ea;       /* subtle borders */
+
+    /* Brand colours */
+    --color-primary: #0e7c7b;      /* teal: main brand colour */
+    --color-primary-dark: #0a5d5c;
+    --color-primary-soft: #dff1f0;
+    --color-accent: #e08a2e;       /* warm amber: highlights */
+    --color-navy: #0f2a37;         /* contact section and footer */
+
+    /* Soft tints for icon tiles (a few colours, used sparingly) */
+    --tint-teal-bg: #dff1f0;   --tint-teal-fg: #0e7c7b;
+    --tint-amber-bg: #fcefdf;  --tint-amber-fg: #b5661a;
+    --tint-indigo-bg: #e6e9fb; --tint-indigo-fg: #3f4fb8;
+    --tint-rose-bg: #fbe5ec;   --tint-rose-fg: #b83d64;
 
     --font-heading: "Fraunces", Georgia, "Times New Roman", serif;
     --font-body: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
-    --radius: 14px;
-    --radius-small: 999px;        /* pill shape for tags and buttons */
-    --shadow: 0 1px 2px rgba(23, 34, 30, 0.04), 0 4px 16px rgba(23, 34, 30, 0.06);
-    --shadow-hover: 0 2px 4px rgba(23, 34, 30, 0.06), 0 12px 28px rgba(23, 34, 30, 0.10);
-    --max-width: 1120px;
+    --radius: 16px;
+    --radius-pill: 999px;          /* pill shape for tags and buttons */
+    --shadow: 0 1px 2px rgba(15, 42, 55, 0.04), 0 6px 20px rgba(15, 42, 55, 0.06);
+    --shadow-hover: 0 4px 8px rgba(15, 42, 55, 0.06), 0 18px 36px rgba(15, 42, 55, 0.12);
+    --max-width: 1140px;
     --header-height: 72px;
 }
 
@@ -83,7 +92,7 @@ a {
 a:focus-visible {
     outline: 3px solid var(--color-accent);
     outline-offset: 3px;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 /* Centres content and limits its width */
@@ -92,6 +101,18 @@ a:focus-visible {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 1.5rem;
+}
+
+/* Shared style for every inline SVG icon */
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;                       /* icon takes the text colour of its parent */
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
 }
 
 /* Skip link is hidden until it receives keyboard focus */
@@ -118,9 +139,9 @@ a:focus-visible {
     position: sticky;                           /* stays at the top while scrolling */
     top: 0;
     z-index: 50;
-    background-color: rgba(250, 248, 244, 0.92);
+    background-color: rgba(248, 250, 251, 0.9);
     border-bottom: 1px solid var(--color-border);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
 }
 
 .nav-bar {
@@ -133,7 +154,7 @@ a:focus-visible {
 
 .brand {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.55rem;
     font-weight: 600;
     color: var(--color-text);
     text-decoration: none;
@@ -147,6 +168,7 @@ a:focus-visible {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 0.25rem;
     margin: 0;
     padding: 0;
@@ -155,7 +177,7 @@ a:focus-visible {
 .nav-links a {
     display: block;
     padding: 0.45rem 0.85rem;
-    border-radius: var(--radius-small);
+    border-radius: var(--radius-pill);
     color: var(--color-muted);
     font-size: 0.95rem;
     font-weight: 500;
@@ -168,19 +190,31 @@ a:focus-visible {
     color: var(--color-primary-dark);
 }
 
+/* "Contact" link is styled as a small button */
+.nav-links .nav-cta {
+    background-color: var(--color-navy);
+    color: #fff;
+    margin-left: 0.4rem;
+}
+
+.nav-links .nav-cta:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
 
 /* =========================================================
    4. BUTTONS
    ========================================================= */
 .btn {
     display: inline-block;
-    padding: 0.8rem 1.6rem;
-    border-radius: var(--radius-small);
+    padding: 0.85rem 1.7rem;
+    border-radius: var(--radius-pill);
     font-weight: 600;
     font-size: 0.98rem;
     text-decoration: none;
     border: 2px solid var(--color-primary);
-    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .btn:hover {
@@ -190,16 +224,18 @@ a:focus-visible {
 .btn-primary {
     background-color: var(--color-primary);
     color: #fff;
+    box-shadow: 0 8px 20px rgba(14, 124, 123, 0.25);
 }
 
 .btn-primary:hover {
     background-color: var(--color-primary-dark);
     border-color: var(--color-primary-dark);
+    box-shadow: 0 12px 24px rgba(14, 124, 123, 0.3);
 }
 
 .btn-outline {
-    background-color: transparent;
-    color: var(--color-primary);
+    background-color: var(--color-surface);
+    color: var(--color-primary-dark);
 }
 
 .btn-outline:hover {
@@ -211,36 +247,64 @@ a:focus-visible {
    5. HERO / HOME SECTION
    ========================================================= */
 .hero {
-    padding: 5rem 0 5.5rem;
+    padding: 4.5rem 0 5.5rem;
+    /* Two soft colour glows layered over the page background */
+    background:
+        radial-gradient(circle at 85% 15%, rgba(14, 124, 123, 0.14), transparent 45%),
+        radial-gradient(circle at 5% 95%, rgba(224, 138, 46, 0.12), transparent 40%),
+        var(--color-bg);
 }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.25fr 1fr;          /* text column + photo column */
+    grid-template-columns: 1.3fr 1fr;           /* text column + photo column */
     align-items: center;
     gap: 4rem;
 }
 
-.eyebrow {
-    color: var(--color-accent);
+/* Small rounded label above the name */
+.hero-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.4rem 1rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    font-size: 0.88rem;
     font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    margin-bottom: 0.75rem;
+    color: var(--color-primary-dark);
+    box-shadow: var(--shadow);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
 }
 
 .hero h1 {
-    font-size: clamp(2.6rem, 6vw, 4.2rem);      /* scales smoothly with screen width */
+    font-size: clamp(2.5rem, 5.6vw, 4rem);      /* scales smoothly with screen width */
     letter-spacing: -0.02em;
     margin-bottom: 1rem;
+}
+
+/* Gradient-coloured name */
+.highlight {
+    display: block;
+    background: linear-gradient(90deg, var(--color-primary) 0%, #1a5f8a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .hero-role {
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--color-primary);
-    margin-bottom: 1.25rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
 }
 
 .hero-intro {
@@ -255,28 +319,78 @@ a:focus-visible {
     gap: 0.9rem;
 }
 
-/* Photo with an offset decorative frame behind it */
+/* Row of three highlight numbers */
+.hero-stats {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin: 2.75rem 0 0;
+    padding: 1.5rem 0 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.hero-stats li {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-stats strong {
+    font-family: var(--font-heading);
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--color-primary-dark);
+}
+
+.hero-stats span {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+}
+
+/* Photo with a gradient border and a floating location tag */
 .hero-photo {
     position: relative;
-    max-width: 380px;
+    max-width: 390px;
+    width: 100%;
     justify-self: center;
 }
 
-.hero-photo::before {
-    content: "";
-    position: absolute;
-    inset: 1.25rem -1.25rem -1.25rem 1.25rem;
-    border: 2px solid var(--color-accent);
-    border-radius: 24px;
-    z-index: -1;
+.photo-frame {
+    padding: 8px;
+    border-radius: 28px;
+    background: linear-gradient(140deg, var(--color-primary), #5fb3b0 45%, var(--color-accent));
+    box-shadow: var(--shadow-hover);
 }
 
-.hero-photo img {
-    border-radius: 24px;
-    box-shadow: var(--shadow-hover);
+.photo-frame img {
+    width: 100%;
+    border-radius: 22px;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center 25%;
+}
+
+.photo-tag {
+    position: absolute;
+    left: -1.25rem;
+    bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0;
+    padding: 0.6rem 1rem;
+    background-color: var(--color-surface);
+    border-radius: 12px;
+    box-shadow: var(--shadow-hover);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.photo-tag .icon {
+    width: 18px;
+    height: 18px;
+    color: var(--color-accent);
 }
 
 
@@ -291,13 +405,25 @@ a:focus-visible {
     background-color: var(--color-bg-alt);
 }
 
+/* Small label above each heading, with a short coloured line */
 .section-label {
-    color: var(--color-accent);
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    font-size: 0.82rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.section-label::before {
+    content: "";
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
 }
 
 .section-title {
@@ -313,16 +439,25 @@ a:focus-visible {
     border-radius: var(--radius);
     padding: 1.75rem;
     box-shadow: var(--shadow);
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
 .card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.22rem;
+    margin-bottom: 0.7rem;
 }
 
 .card p:last-child {
     margin-bottom: 0;
+}
+
+/* Shared hover effect for interactive-looking cards */
+.project-card:hover,
+.skill-card:hover,
+.interest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: #bfdcdb;
 }
 
 /* Responsive grid of cards: columns are added automatically as space allows */
@@ -331,6 +466,22 @@ a:focus-visible {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
+
+/* Rounded square that holds an icon */
+.icon-tile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    margin-bottom: 1.1rem;
+}
+
+.tile-teal   { background-color: var(--tint-teal-bg);   color: var(--tint-teal-fg); }
+.tile-amber  { background-color: var(--tint-amber-bg);  color: var(--tint-amber-fg); }
+.tile-indigo { background-color: var(--tint-indigo-bg); color: var(--tint-indigo-fg); }
+.tile-rose   { background-color: var(--tint-rose-bg);   color: var(--tint-rose-fg); }
 
 /* Small pill-shaped labels used for technologies and skills */
 .tags {
@@ -343,17 +494,19 @@ a:focus-visible {
 }
 
 .tags li {
-    background-color: var(--color-primary-soft);
-    color: var(--color-primary-dark);
-    font-size: 0.85rem;
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 0.84rem;
     font-weight: 500;
-    padding: 0.3rem 0.8rem;
-    border-radius: var(--radius-small);
+    padding: 0.28rem 0.8rem;
+    border-radius: var(--radius-pill);
 }
 
 .tags-soft li {
-    background-color: #f6ebdf;
-    color: #7a4b1f;
+    background-color: var(--tint-rose-bg);
+    border-color: #f3cfdb;
+    color: #8e2d4c;
 }
 
 
@@ -371,6 +524,17 @@ a:focus-visible {
     color: var(--color-muted);
 }
 
+.about-text .lead {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+/* Quick facts card with a coloured top edge */
+.facts-card {
+    border-top: 4px solid var(--color-primary);
+}
+
 .facts {
     margin: 0;
 }
@@ -386,11 +550,11 @@ a:focus-visible {
 }
 
 .facts dt {
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-muted);
+    color: var(--color-primary);
 }
 
 .facts dd {
@@ -405,26 +569,46 @@ a:focus-visible {
 .timeline {
     display: grid;
     gap: 1.5rem;
-    border-left: 2px solid var(--color-border);
-    padding-left: 2rem;
-    margin-left: 0.5rem;
+    position: relative;
+    padding-left: 4.5rem;
+}
+
+/* Vertical line connecting the timeline icons */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 23px;
+    top: 1.5rem;
+    bottom: 1.5rem;
+    width: 2px;
+    background: linear-gradient(var(--color-primary), var(--color-accent));
+    opacity: 0.4;
 }
 
 .timeline-item {
     position: relative;
 }
 
-/* Round marker on the timeline line */
-.timeline-item::before {
-    content: "";
+/* Round icon badge sitting on the timeline line */
+.timeline-icon {
     position: absolute;
-    left: calc(-2rem - 8px);
-    top: 2rem;
-    width: 14px;
-    height: 14px;
+    left: calc(-4.5rem);
+    top: 1.5rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
-    background-color: var(--color-primary);
-    border: 3px solid var(--color-bg-alt);
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    box-shadow: var(--shadow);
+}
+
+.timeline-icon .icon {
+    width: 22px;
+    height: 22px;
 }
 
 .timeline-head {
@@ -440,18 +624,18 @@ a:focus-visible {
 }
 
 .badge {
-    background-color: var(--color-primary-soft);
-    color: var(--color-primary-dark);
-    font-size: 0.85rem;
+    background-color: var(--tint-amber-bg);
+    color: #8a4a10;
+    font-size: 0.84rem;
     font-weight: 600;
-    padding: 0.25rem 0.8rem;
-    border-radius: var(--radius-small);
+    padding: 0.25rem 0.85rem;
+    border-radius: var(--radius-pill);
     white-space: nowrap;
 }
 
 .timeline-sub {
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     margin-bottom: 0.5rem;
 }
 
@@ -459,27 +643,37 @@ a:focus-visible {
     color: var(--color-muted);
 }
 
+.timeline-item .timeline-sub {
+    color: var(--color-primary-dark);
+}
+
 
 /* =========================================================
    9. PROJECTS & SKILLS CARDS
    ========================================================= */
 .project-card {
-    border-top: 4px solid var(--color-primary);
     display: flex;
     flex-direction: column;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Large faded number in the corner of each project card */
+.project-number {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-border);
 }
 
 .project-card p {
     color: var(--color-muted);
     flex-grow: 1;                               /* keeps tags aligned at the bottom */
-}
-
-.project-card:hover,
-.skill-card:hover,
-.interest-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
-    border-color: #cfd8d2;
 }
 
 .skills-grid {
@@ -501,18 +695,6 @@ a:focus-visible {
     gap: 1.5rem;
 }
 
-.interest-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 52px;
-    height: 52px;
-    margin-bottom: 1rem;
-    border-radius: 14px;
-    background-color: var(--color-primary-soft);
-    font-size: 1.5rem;
-}
-
 .interest-card h3 {
     font-size: 1.15rem;
     margin-bottom: 0.4rem;
@@ -528,12 +710,14 @@ a:focus-visible {
    11. CONTACT SECTION
    ========================================================= */
 .section-dark {
-    background-color: var(--color-dark);
-    color: #f3f1ec;
+    background:
+        radial-gradient(circle at 90% 10%, rgba(14, 124, 123, 0.35), transparent 50%),
+        var(--color-navy);
+    color: #f1f5f6;
 }
 
 .section-dark .section-label {
-    color: #e0a76d;
+    color: #7fd1cf;
 }
 
 .section-dark .section-title {
@@ -541,7 +725,7 @@ a:focus-visible {
 }
 
 .contact-intro {
-    color: #c3cbc6;
+    color: #c4d1d6;
     max-width: 38rem;
     margin-bottom: 2.5rem;
 }
@@ -556,27 +740,39 @@ a:focus-visible {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
-    padding: 1.5rem;
+    padding: 1.6rem;
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: var(--radius);
-    background-color: rgba(255, 255, 255, 0.04);
-    color: #f3f1ec;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #f1f5f6;
     text-decoration: none;
     transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
 }
 
 a.contact-card:hover {
-    background-color: rgba(255, 255, 255, 0.09);
-    border-color: #e0a76d;
-    transform: translateY(-3px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #7fd1cf;
+    transform: translateY(-4px);
+}
+
+.contact-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 0.6rem;
+    border-radius: 12px;
+    background-color: rgba(127, 209, 207, 0.15);
+    color: #7fd1cf;
 }
 
 .contact-type {
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #e0a76d;
+    color: #f2b26b;
 }
 
 .contact-value {
@@ -589,8 +785,8 @@ a.contact-card:hover {
    12. FOOTER
    ========================================================= */
 .site-footer {
-    background-color: #111a17;
-    color: #aeb8b2;
+    background-color: #0a1f29;
+    color: #a9b8bf;
     padding: 1.5rem 0;
     font-size: 0.92rem;
 }
@@ -608,7 +804,7 @@ a.contact-card:hover {
 }
 
 .site-footer a {
-    color: #e0a76d;
+    color: #7fd1cf;
     text-decoration: none;
     font-weight: 500;
 }
@@ -659,7 +855,8 @@ a.contact-card:hover {
         margin-right: auto;
     }
 
-    .hero-buttons {
+    .hero-buttons,
+    .hero-stats {
         justify-content: center;
     }
 
@@ -688,16 +885,31 @@ a.contact-card:hover {
         font-size: 0.88rem;
     }
 
+    .nav-links .nav-cta {
+        margin-left: 0;
+    }
+
     html {
         scroll-padding-top: 130px;
     }
 
     .hero-photo {
-        max-width: 240px;
+        max-width: 250px;
     }
 
-    .hero-photo::before {
-        inset: 0.9rem -0.9rem -0.9rem 0.9rem;
+    .photo-tag {
+        left: 50%;
+        bottom: -1rem;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+
+    .hero-stats {
+        gap: 1.5rem;
+    }
+
+    .hero-stats strong {
+        font-size: 1.6rem;
     }
 
     .section {
@@ -714,21 +926,29 @@ a.contact-card:hover {
 
     .card-grid,
     .skills-grid,
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .contact-grid,
     .interest-grid {
         grid-template-columns: 1fr;
     }
 
+    /* Timeline: smaller icons on phones */
     .timeline {
-        padding-left: 1.4rem;
-        margin-left: 0.25rem;
+        padding-left: 3.25rem;
     }
 
-    .timeline-item::before {
-        left: calc(-1.4rem - 8px);
+    .timeline::before {
+        left: 17px;
+    }
+
+    .timeline-icon {
+        left: -3.25rem;
+        width: 36px;
+        height: 36px;
+    }
+
+    .timeline-icon .icon {
+        width: 18px;
+        height: 18px;
     }
 
     .footer-inner {

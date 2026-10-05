@@ -9,7 +9,7 @@
     <!-- Google Fonts: Fraunces for headings, Inter for body text -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -18,6 +18,13 @@
 
     <!-- Skip link: lets keyboard users jump straight to the content -->
     <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!--
+        NOTE ON ICONS:
+        The small symbols on this page are inline SVG (Scalable Vector Graphics).
+        Each icon is a few lines drawn inside a 24 x 24 box. They use the class "icon",
+        and CSS sets their colour, so no image files or icon libraries are needed.
+    -->
 
     <!-- ================= HEADER & NAVIGATION ================= -->
     <header class="site-header">
@@ -31,7 +38,7 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#interests">Interests</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a class="nav-cta" href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -43,9 +50,12 @@
         <section id="home" class="hero">
             <div class="container hero-grid">
                 <div class="hero-text">
-                    <p class="eyebrow">Hello, I'm</p>
-                    <h1>Tharunya R Naik</h1>
-                    <p class="hero-role">B.Tech Information Technology Student &middot; Manipal Institute of Technology</p>
+                    <p class="hero-chip">
+                        <span class="dot" aria-hidden="true"></span>
+                        B.Tech IT Student &middot; MIT Manipal
+                    </p>
+                    <h1>Hi, I'm <span class="highlight">Tharunya R Naik</span></h1>
+                    <p class="hero-role">Information Technology Student &amp; Aspiring Developer</p>
                     <p class="hero-intro">
                         A second-year IT student who enjoys turning ideas into working software,
                         from safety-focused route recommendations to full-stack booking platforms.
@@ -55,11 +65,24 @@
                         <a class="btn btn-primary" href="#contact">Get in Touch</a>
                         <a class="btn btn-outline" href="#projects">View Projects</a>
                     </div>
+
+                    <!-- Key highlights taken from the resume -->
+                    <ul class="hero-stats">
+                        <li><strong>95%</strong><span>Pre-University score</span></li>
+                        <li><strong>3</strong><span>Academic projects</span></li>
+                        <li><strong>2nd</strong><span>Year of B.Tech</span></li>
+                    </ul>
                 </div>
 
                 <div class="hero-photo">
-                    <img src="images/profile.jpg" width="671" height="900"
-                         alt="Portrait of Tharunya R Naik smiling, wearing a cream sweater against a green background">
+                    <div class="photo-frame">
+                        <img src="images/profile.jpg" width="658" height="1000"
+                             alt="Tharunya R Naik smiling, wearing a white striped sweater, with a river and buildings in the background">
+                    </div>
+                    <p class="photo-tag">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Mangaluru, Karnataka
+                    </p>
                 </div>
             </div>
         </section>
@@ -72,11 +95,13 @@
 
                 <div class="about-grid">
                     <div class="about-text">
-                        <p>
+                        <p class="lead">
                             I am currently pursuing a Bachelor of Technology in Information Technology at
-                            Manipal Institute of Technology, Manipal. My interest in technology grew out of a
-                            strong foundation in Physics, Chemistry, Mathematics and Computer Science during
-                            my pre-university studies in Mangalore.
+                            Manipal Institute of Technology, Manipal.
+                        </p>
+                        <p>
+                            My interest in technology grew out of a strong foundation in Physics, Chemistry,
+                            Mathematics and Computer Science during my pre-university studies in Mangaluru.
                         </p>
                         <p>
                             I enjoy working across the stack: designing clean front-end interfaces with HTML,
@@ -108,8 +133,8 @@
                                 <dd>Second Year (2024 – 2028)</dd>
                             </div>
                             <div>
-                                <dt>Location</dt>
-                                <dd>Mangalore, Karnataka</dd>
+                                <dt>Hometown</dt>
+                                <dd>Mangaluru, Karnataka</dd>
                             </div>
                         </dl>
                     </aside>
@@ -124,8 +149,11 @@
                 <h2 class="section-title">Academic background</h2>
 
                 <div class="timeline">
-                    <!-- Education item 1 -->
+                    <!-- Education item 1: University -->
                     <article class="card timeline-item">
+                        <span class="timeline-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        </span>
                         <div class="timeline-head">
                             <h3>Manipal Institute of Technology, Manipal</h3>
                             <span class="badge">2024 – 2028</span>
@@ -134,14 +162,30 @@
                         <p>Currently in the second year of the undergraduate programme.</p>
                     </article>
 
-                    <!-- Education item 2 -->
+                    <!-- Education item 2: Pre-University -->
                     <article class="card timeline-item">
+                        <span class="timeline-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                        </span>
                         <div class="timeline-head">
-                            <h3>Sharada Pre-University College, Kodialbail, Mangalore</h3>
+                            <h3>Sharada Pre-University College, Kodialbail, Mangaluru</h3>
                             <span class="badge">2022 – 2024</span>
                         </div>
                         <p class="timeline-sub">PCMC: Physics, Chemistry, Mathematics, Computer Science</p>
                         <p>Completed pre-university education with a score of <strong>95%</strong>.</p>
+                    </article>
+
+                    <!-- Education item 3: School -->
+                    <article class="card timeline-item">
+                        <span class="timeline-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M10 21v-5h4v5"/></svg>
+                        </span>
+                        <div class="timeline-head">
+                            <h3>Chinmaya High School, Kadri, Mangaluru, Karnataka</h3>
+                            <span class="badge">School</span>
+                        </div>
+                        <p class="timeline-sub">Secondary school education</p>
+                        <p>Completed my schooling in Mangaluru, Karnataka.</p>
                     </article>
                 </div>
             </div>
@@ -156,6 +200,12 @@
                 <div class="card-grid">
                     <!-- Project 1 -->
                     <article class="card project-card">
+                        <div class="project-top">
+                            <span class="icon-tile tile-teal" aria-hidden="true">
+                                <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+                            </span>
+                            <span class="project-number">01</span>
+                        </div>
                         <h3>Woman Safety Route System</h3>
                         <p>
                             A safety-focused route recommendation system that helps users identify safer
@@ -172,6 +222,12 @@
 
                     <!-- Project 2 -->
                     <article class="card project-card">
+                        <div class="project-top">
+                            <span class="icon-tile tile-amber" aria-hidden="true">
+                                <svg class="icon" viewBox="0 0 24 24"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3Z"/><path d="M9 3v15"/><path d="M15 6v15"/></svg>
+                            </span>
+                            <span class="project-number">02</span>
+                        </div>
                         <h3>Online Tour Package Booking System</h3>
                         <p>
                             A web-based tour booking platform with secure login and sign-up, a normalised
@@ -190,6 +246,12 @@
 
                     <!-- Project 3 -->
                     <article class="card project-card">
+                        <div class="project-top">
+                            <span class="icon-tile tile-indigo" aria-hidden="true">
+                                <svg class="icon" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg>
+                            </span>
+                            <span class="project-number">03</span>
+                        </div>
                         <h3>Hotel Management System</h3>
                         <p>
                             An application for managing room bookings, customer records and billing, with
@@ -215,6 +277,9 @@
 
                 <div class="card-grid skills-grid">
                     <div class="card skill-card">
+                        <span class="icon-tile tile-teal" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
+                        </span>
                         <h3>Programming Languages</h3>
                         <ul class="tags">
                             <li>C</li>
@@ -225,6 +290,9 @@
                     </div>
 
                     <div class="card skill-card">
+                        <span class="icon-tile tile-indigo" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg>
+                        </span>
                         <h3>Web &amp; Frameworks</h3>
                         <ul class="tags">
                             <li>HTML</li>
@@ -235,6 +303,9 @@
                     </div>
 
                     <div class="card skill-card">
+                        <span class="icon-tile tile-amber" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg>
+                        </span>
                         <h3>Tools</h3>
                         <ul class="tags">
                             <li>Git</li>
@@ -245,6 +316,9 @@
                     </div>
 
                     <div class="card skill-card">
+                        <span class="icon-tile tile-rose" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>
+                        </span>
                         <h3>Personal Strengths</h3>
                         <ul class="tags tags-soft">
                             <li>Time Management</li>
@@ -265,32 +339,44 @@
 
                 <div class="interest-grid">
                     <div class="card interest-card">
-                        <span class="interest-icon" aria-hidden="true">✏️</span>
+                        <span class="icon-tile tile-teal" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                        </span>
                         <h3>Drawing</h3>
                         <p>Sketching ideas, people and places with pencil and pen.</p>
                     </div>
                     <div class="card interest-card">
-                        <span class="interest-icon" aria-hidden="true">🎨</span>
+                        <span class="icon-tile tile-amber" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="1"/><circle cx="17.5" cy="10.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><circle cx="6.5" cy="12.5" r="1"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.55-2.5 5.55-5.55C21.97 6.01 17.46 2 12 2Z"/></svg>
+                        </span>
                         <h3>Painting</h3>
                         <p>Experimenting with colour, texture and composition on canvas.</p>
                     </div>
                     <div class="card interest-card">
-                        <span class="interest-icon" aria-hidden="true">💃</span>
+                        <span class="icon-tile tile-rose" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                        </span>
                         <h3>Dancing</h3>
                         <p>Expressing rhythm and emotion through movement.</p>
                     </div>
                     <div class="card interest-card">
-                        <span class="interest-icon" aria-hidden="true">🏸</span>
+                        <span class="icon-tile tile-indigo" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><circle cx="15" cy="9" r="6"/><path d="M11 9h8"/><path d="M15 5v8"/><path d="m10.8 13.2-7.3 7.3"/></svg>
+                        </span>
                         <h3>Badminton</h3>
                         <p>A fast-paced game I enjoy for fitness and friendly competition.</p>
                     </div>
                     <div class="card interest-card">
-                        <span class="interest-icon" aria-hidden="true">💡</span>
+                        <span class="icon-tile tile-teal" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                        </span>
                         <h3>Exploring New Tech</h3>
                         <p>Trying out new tools, frameworks and ideas in the tech world.</p>
                     </div>
                     <div class="card interest-card">
-                        <span class="interest-icon" aria-hidden="true">🖌️</span>
+                        <span class="icon-tile tile-amber" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                        </span>
                         <h3>UI &amp; Visual Design</h3>
                         <p>Bringing an artist's eye to clean, user-friendly interfaces.</p>
                     </div>
@@ -310,16 +396,25 @@
 
                 <div class="contact-grid">
                     <a class="contact-card" href="mailto:tharunyanaik06@gmail.com">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                        </span>
                         <span class="contact-type">Email</span>
                         <span class="contact-value">tharunyanaik06@gmail.com</span>
                     </a>
                     <a class="contact-card" href="https://github.com/Tharunya006" target="_blank" rel="noopener noreferrer">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                        </span>
                         <span class="contact-type">GitHub</span>
                         <span class="contact-value">github.com/Tharunya006</span>
                     </a>
                     <div class="contact-card">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </span>
                         <span class="contact-type">Location</span>
-                        <span class="contact-value">Mangalore, Karnataka, India</span>
+                        <span class="contact-value">Mangaluru, Karnataka, India</span>
                     </div>
                 </div>
             </div>
